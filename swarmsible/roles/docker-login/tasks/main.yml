@@ -4,9 +4,7 @@
     name: docker
 
 - name: "Login to private registry at {{ item.registry }} and force re-authorization"
-  collections:
-    - community.docker
-  docker_login:
+  community.general.docker_login:
     registry: "{{ item.registry }}"
     username: "{{ item.user }}"
     password: "{{ item.passwd }}"

@@ -14,12 +14,9 @@
     ansible_ssh_private_key_file: "{{ ansible_initial_ssh_private_key_file | default(playbook_dir + '/ssh_keys/root_rsa') }}"
     ansible_user: "{{ ansible_initial_user | default('root') }}" 
   become: True
-  collections:
-    - ansible.posix
-    - community.general
   tasks:
     - name: Ensure the en_US locale exists
-      locale_gen:
+      community.general.locale_gen:
         name: en_US.UTF-8
         state: present
     - name: set en_US as default locale
