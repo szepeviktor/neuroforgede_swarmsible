@@ -16,7 +16,7 @@
   become: True
   tasks:
     - name: Ensure the en_US locale exists
-      community.general.locale_gen:
+      locale_gen:
         name: en_US.UTF-8
         state: present
     - name: set en_US as default locale

@@ -4,7 +4,7 @@
     name: docker
 
 - name: "Login to private registry at {{ item.registry }} and force re-authorization"
-  community.general.docker_login:
+  docker_login:
     registry: "{{ item.registry }}"
     username: "{{ item.user }}"
     password: "{{ item.passwd }}"
