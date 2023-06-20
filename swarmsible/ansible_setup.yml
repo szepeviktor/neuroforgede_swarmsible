@@ -15,6 +15,7 @@
     ansible_user: "{{ ansible_initial_user | default('root') }}" 
   become: True
   collections:
+    - ansible.posix
     - community.general
   tasks:
     - name: Ensure the en_US locale exists
